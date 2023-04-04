@@ -98,6 +98,21 @@ public class SimpleGUI extends JFrame implements ActionListener, ItemListener, C
                 checkBox2.setSelected(false);
             }
         });
+        JButton newWindow = new JButton("Open");
+        newWindow.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame newFrame = new JFrame("Look at me!");
+                newFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                newFrame.setSize(200, 150);
+                newFrame.setLocation(350, 75);
+                JLabel helloLabel = new JLabel("HELLO!!");
+                JPanel panel = new JPanel();
+                panel.add(helloLabel);
+                newFrame.add(panel, BorderLayout.NORTH);
+                newFrame.setVisible(true);
+            }
+        });
 
         // create checkboxes
         JCheckBox checkBox1 = new JCheckBox("Yes");
@@ -113,6 +128,7 @@ public class SimpleGUI extends JFrame implements ActionListener, ItemListener, C
         panel.add(textField);
         panel.add(sendButton);
         panel.add(resetButton);
+        panel.add(newWindow);
         panel.add(checkBox1);
         panel.add(checkBox2);
 
