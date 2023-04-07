@@ -117,8 +117,23 @@ public class SimpleGUI extends JFrame implements ActionListener, ItemListener, C
         // create checkboxes
         JCheckBox checkBox1 = new JCheckBox("Yes");
         checkBox1.setBounds(100, 100, 50, 50);
+        checkBox1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                welcomeLabel.setText("Yes!");
+                textArea.setText("Yes");
+            }
+        });
         JCheckBox checkBox2 = new JCheckBox("No", true);
         checkBox2.setBounds(100, 150, 50, 50);
+        checkBox2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                welcomeLabel.setText("No!");
+                textArea.setText("No");
+            }
+        });
+
 
         // create a panel for organizing the components at the bottom
         JPanel panel = new JPanel(); // a "panel" is not visible
